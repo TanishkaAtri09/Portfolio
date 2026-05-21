@@ -1,0 +1,162 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0; 
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* --- HEADER & NAVIGATION --- */
+.head {
+    background-color: #093C5D;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    padding: 20px;
+}
+
+#main-h {
+    color: white;
+    margin-right: auto;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+}
+
+header nav a {
+    color: aliceblue;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Accessible focus styling for keyboard navigators */
+header nav a:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid #B8B8FF;
+    outline-offset: 4px;
+}
+
+/* --- CONTACT SECTION LAYOUT --- */
+.contact-section {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dfdfff; /* Clean canvas break from header */
+}
+
+.contact-container {
+    max-width: 700px;
+    width: 100%;
+    background-color: rgb(250, 243, 243); /* Matches your About and Project card themes */
+    padding: 50px 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#contact-heading {
+    font-size: 45px;
+    color: #110f0f;
+    margin-bottom: 15px;
+}
+
+.contact-header p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* --- ACCESSIBLE FORM CONTROL --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Spaces out your inputs cleanly */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Spaces input box safely from its text label */
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #093C5D;
+}
+
+.required {
+    color: #d93838; /* Red indicator for required fields */
+    margin-left: 2px;
+}
+
+/* Base style for inputs and textareas */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit; /* Inherits system UI fonts from body */
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    color: #110f0f;
+    outline: none; /* Disables standard ugly browser default outlines */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* High contrast active focus state for 100% Accessibility score */
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+    border-color: #093C5D;
+    box-shadow: 0 0 0 4px rgba(9, 60, 93, 0.15); /* Sleek outline ring effect */
+}
+
+/* Disable messy diagonal layout stretching on textareas */
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 10px;
+}
+
+/* Ensures the submit button spans full width on form container */
+.form-actions .btn {
+    width: 100%;
+    padding: 14px;
+    font-weight: 600;
+}
+
+/* --- RESPONSIVE PHONE LAYOUT --- */
+@media (max-width: 500px) {
+    .contact-section {
+        padding: 40px 15px;
+    }
+
+    .contact-container {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    #contact-heading {
+        font-size: 32px;
+    }
+}
